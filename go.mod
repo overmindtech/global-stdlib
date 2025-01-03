@@ -7,7 +7,7 @@ toolchain go1.23.4
 // Direct dependencies
 require (
 	github.com/MrAlias/otel-schema-utils v0.2.1-alpha
-	github.com/getsentry/sentry-go v0.30.0
+	github.com/getsentry/sentry-go v0.31.1
 	github.com/miekg/dns v1.1.62
 	github.com/nats-io/jwt/v2 v2.7.2 // indirect
 	github.com/nats-io/nkeys v0.4.8 // indirect
