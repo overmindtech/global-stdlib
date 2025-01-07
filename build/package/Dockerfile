@@ -24,7 +24,7 @@ COPY adapters/ adapters/
 # Build
 RUN --mount=type=cache,target=/root/.cache/go-build \
     go generate ./... \
-    && GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags="-s -w" -trimpath -o source main.go
+    && GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags="-s -w -X github.com/overmindtech/stdlib-source/tracing.ServiceVersion=$(git describe --tags --exact-match 2>/dev/null || git rev-parse --short HEAD)" -trimpath -o source main.go
 
 FROM alpine:3.21
 WORKDIR /
